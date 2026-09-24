@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react'
 import { fetchCollection } from '../api'
 
-function ResourceTable({ resource, title, description, columns }) {
+function ResourceTable({ resource, endpoint, title, description, columns }) {
   const [items, setItems] = useState([])
   const [status, setStatus] = useState('loading')
   const [error, setError] = useState('')
@@ -12,7 +12,7 @@ function ResourceTable({ resource, title, description, columns }) {
     async function loadItems() {
       try {
         setStatus('loading')
-        const data = await fetchCollection(resource)
+        const data = await fetchCollection(resource, endpoint)
 
         if (isMounted) {
           setItems(data)
@@ -31,7 +31,7 @@ function ResourceTable({ resource, title, description, columns }) {
     return () => {
       isMounted = false
     }
-  }, [resource])
+  }, [resource, endpoint])
 
   return (
     <section className="resource-view">
