@@ -1,0 +1,148 @@
+.app-shell {
+  min-height: 100svh;
+}
+
+.app-header {
+  align-items: center;
+  background: rgba(255, 255, 255, 0.88);
+  border-bottom: 1px solid var(--border);
+  display: flex;
+  gap: 24px;
+  justify-content: space-between;
+  padding: 18px 32px;
+  position: sticky;
+  top: 0;
+  z-index: 10;
+}
+
+.brand {
+  align-items: center;
+  color: var(--text-h);
+  display: inline-flex;
+  font-weight: 800;
+  gap: 12px;
+  text-decoration: none;
+  white-space: nowrap;
+}
+
+.brand img {
+  height: 42px;
+  width: 42px;
+}
+
+.app-nav {
+  gap: 8px;
+  justify-content: flex-end;
+}
+
+.app-nav .nav-link {
+  border-radius: 6px;
+  color: var(--text);
+  font-weight: 700;
+}
+
+.app-nav .nav-link.active,
+.app-nav .nav-link:hover {
+  background: var(--accent);
+  color: #fff;
+}
+
+main {
+  padding: 32px;
+}
+
+.api-banner {
+  align-items: center;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  display: flex;
+  gap: 12px;
+  margin-bottom: 24px;
+  overflow-x: auto;
+  padding: 12px 16px;
+  text-align: left;
+}
+
+.api-banner span {
+  color: var(--accent);
+  font-size: 13px;
+  font-weight: 800;
+  letter-spacing: 0;
+  text-transform: uppercase;
+}
+
+.resource-view {
+  text-align: left;
+}
+
+.resource-heading {
+  align-items: flex-end;
+  display: flex;
+  gap: 20px;
+  justify-content: space-between;
+  margin-bottom: 24px;
+}
+
+.eyebrow {
+  color: var(--accent);
+  font-size: 13px;
+  font-weight: 800;
+  margin-bottom: 8px;
+  text-transform: uppercase;
+}
+
+.resource-heading h1 {
+  margin: 0 0 8px;
+}
+
+.record-count {
+  background: var(--accent-bg);
+  border: 1px solid var(--accent-border);
+  border-radius: 999px;
+  color: var(--accent-strong);
+  flex: 0 0 auto;
+  font-weight: 800;
+  padding: 8px 14px;
+}
+
+.resource-table-wrap {
+  background: #fff;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+}
+
+.resource-table-wrap .table {
+  min-width: 760px;
+}
+
+.resource-table-wrap th {
+  color: var(--text-h);
+  font-size: 13px;
+  letter-spacing: 0;
+  text-transform: uppercase;
+}
+
+.state-message {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 18px;
+}
+
+@media (max-width: 900px) {
+  .app-header,
+  .resource-heading {
+    align-items: stretch;
+    flex-direction: column;
+  }
+
+  .app-header,
+  main {
+    padding: 20px;
+  }
+
+  .app-nav {
+    justify-content: flex-start;
+  }
+}
