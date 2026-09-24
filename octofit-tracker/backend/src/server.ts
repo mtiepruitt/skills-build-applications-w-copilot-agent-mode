@@ -29,3 +29,4 @@ app.listen(PORT, () => {
     : `http://localhost:${PORT}`;
   console.log(`OctoFit Tracker API running at ${baseUrl}`);
 });
+
