@@ -2,17 +2,24 @@ import express from 'express';
 import cors from 'cors';
 import dotenv from 'dotenv';
 import './config/database';
+import apiRouter from './routes';
 
 dotenv.config();
 
 const app = express();
-const PORT = process.env.PORT || 8000;
+const PORT = 8000;
 
 app.use(cors());
 app.use(express.json());
+app.use('/api', apiRouter);
 
 app.get('/api', (_req, res) => {
   res.json({ message: 'OctoFit Tracker API' });
+});
+
+app.use((error: Error, _req: express.Request, res: express.Response, _next: express.NextFunction) => {
+  console.error(error);
+  res.status(500).json({ message: 'Internal server error' });
 });
 
 app.listen(PORT, () => {
